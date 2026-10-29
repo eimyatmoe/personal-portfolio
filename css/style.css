@@ -1,0 +1,2443 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 80px;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(176, 120, 0);
+  outline-offset: 3px;
+}
+
+.site-header {
+  background-color: rgb(254, 207, 112);
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.nav-logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(245, 190, 50);
+  background-color: rgb(65, 47, 31);
+  padding: 5px 15px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+.logo-dot {
+  color: rgb(245, 190, 50);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 8px 4px;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-links a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#theme-toggle {
+  background-color: rgb(65, 47, 31);
+  color: rgb(245, 190, 50);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+}
+
+#menu-toggle {
+  background-color: rgb(65, 47, 31);
+  color: rgb(245, 190, 50);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+}
+
+.hero {
+  min-height: 80vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background-color: rgb(255, 249, 235);
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-greeting {
+  font-size: 20px;
+  color: rgb(176, 120, 0);
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 40px;
+  color: rgb(36, 36, 36);
+  margin-bottom: 10px;
+}
+
+.hero-role {
+  font-size: 22px;
+  color: rgb(176, 120, 0);
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 20px;
+  color: rgb(65, 47, 31);
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-primary {
+  background-color: rgb(245, 190, 50);
+  color: rgb(36, 36, 36);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: rgb(36, 36, 36);
+  padding: 12px 24px;
+  border: 2px solid rgb(176, 120, 0);
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.hero-image {
+  background-color: rgb(245, 207, 112);
+  padding: 12px;
+  border-radius: 20px;
+}
+
+.hero-image img {
+  display: block;
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.about {
+  background-color: rgb(238, 214, 159);
+  padding: 40px 20px;
+  min-height: auto;
+}
+
+.about-container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  color: rgb(65, 47, 31);
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.about-intro {
+  color: rgb(110, 85, 60);
+  text-align: center;
+  line-height: 1.7;
+  margin: 0 0 25px;
+}
+
+.journey-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.journey-timeline::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  bottom: 35px;
+  left: 27px;
+  width: 2px;
+  background-color: rgb(215, 190, 150);
+}
+
+.journey-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.journey-icon {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(245, 230, 195);
+  border: 1px solid rgb(205, 175, 130);
+  border-radius: 50%;
+  color: rgb(120, 85, 40);
+  font-size: 22px;
+}
+
+.journey-content {
+  flex: 1;
+  padding: 5px 0 20px;
+  border-bottom: 1px solid rgb(225, 205, 170);
+}
+
+.journey-content > span {
+  color: rgb(155, 105, 35);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.journey-content h3 {
+  color: rgb(65, 47, 31);
+  font-size: 21px;
+  margin: 6px 0 10px;
+}
+
+.journey-content p {
+  color: rgb(90, 70, 52);
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.journey-item:hover .journey-icon {
+  background-color: rgb(245, 207, 112);
+  transform: translateY(-3px);
+}
+
+.journey-icon {
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+}
+
+.skills {
+  background-color: rgb(255, 249, 235);
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills h2 {
+  font-size: 30px;
+  color: rgb(65, 47, 31);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.skills-intro {
+  color: rgb(110, 85, 60);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.skills-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.skill-category {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(225, 205, 170);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgb(65, 47, 31, 0.06);
+}
+
+.skill-category h3 {
+  color: rgb(65, 47, 31);
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.skill-item {
+  min-width: 0;
+  min-height: 100px;
+  background-color: rgb(255, 249, 235);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+  padding: 10px 5px;
+}
+
+.skill-item i {
+  font-size: 30px;
+}
+
+.skill-item span {
+  font-size: 13px;
+  color: rgb(65, 47, 31);
+}
+
+.learning {
+  font-size: 10px;
+  color: rgb(155, 105, 35);
+}
+
+.skill-item:hover {
+  background-color: rgb(255, 235, 190);
+}
+
+.skills-extra {
+  margin-top: 35px;
+}
+
+.skills-extra h3 {
+  text-align: center;
+  color: rgb(65, 47, 31);
+  margin-bottom: 20px;
+}
+
+.abilities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.ability-card {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(225, 205, 170);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.ability-card i {
+  font-size: 26px;
+  color: rgb(176, 120, 0);
+  margin-bottom: 10px;
+}
+
+.ability-card h4 {
+  color: rgb(65, 47, 31);
+  font-size: 15px;
+}
+
+.ability-card:hover {
+  border-color: rgb(245, 190, 50);
+  background-color: rgb(255, 249, 235);
+}
+
+.currently-learning {
+  margin-top: 25px;
+  background-color: rgb(255, 239, 205);
+  border-left: 4px solid rgb(245, 190, 50);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.currently-learning h3 {
+  color: rgb(65, 47, 31);
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.currently-learning p {
+  color: rgb(110, 85, 60);
+  font-size: 14px;
+}
+
+.skill-item .devicon-github-original {
+  color: rgb(65, 47, 31);
+}
+
+.skill-item .devicon-eclipse-plain {
+  color: rgb(47, 10, 234);
+}
+
+.projects {
+  background-color: rgb(235, 211, 163);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.projects h2 {
+  color: rgb(65, 47, 31);
+  font-size: 30px;
+  margin: 0 0 25px;
+}
+
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filter-btn {
+  background-color: rgb(255, 249, 235);
+  color: rgb(65, 47, 31);
+  border: 1px solid rgb(190, 155, 105);
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: rgb(245, 190, 50);
+}
+
+.filter-btn:focus-visible {
+  outline: 3px solid rgb(65, 47, 31);
+  outline-offset: 3px;
+}
+
+#project-count {
+  color: rgb(90, 70, 52);
+  font-size: 16px;
+  margin: 15px 0 25px;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 15px;
+  text-align: left;
+  background-color: rgb(255, 249, 235);
+  border: 1px solid rgb(205, 175, 130);
+  border-radius: 16px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgb(65 47 31 / 15%);
+}
+
+.project-browser {
+  overflow: hidden;
+  background-color: rgb(245, 230, 200);
+  border-radius: 12px;
+}
+
+.browser-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px;
+  background-color: rgb(230, 215, 190);
+}
+
+.browser-header span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.browser-header span:nth-child(1) {
+  background-color: rgb(211, 186, 60);
+}
+
+.browser-header span:nth-child(2) {
+  background-color: rgb(240, 185, 80);
+}
+
+.browser-header span:nth-child(3) {
+  background-color: rgb(146, 132, 44);
+}
+
+.project-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  background-color: rgb(245, 230, 200);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-image span {
+  color: rgb(120, 95, 70);
+  font-size: 15px;
+}
+
+.project-category {
+  color: rgb(145, 94, 0);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.project-card h3 {
+  color: rgb(65, 47, 31);
+  font-size: 22px;
+  margin: 0;
+}
+
+.project-card p {
+  color: rgb(90, 70, 52);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-technologies span {
+  background-color: rgb(245, 230, 200);
+  color: rgb(65, 47, 31);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.project-github,
+.project-demo {
+  flex: 1;
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.project-github {
+  background-color: rgb(245, 190, 50);
+  color: rgb(65, 47, 31);
+}
+
+.project-demo {
+  border: 1px solid rgb(176, 120, 0);
+  color: rgb(65, 47, 31);
+}
+
+.project-links a:focus-visible {
+  outline: 3px solid rgb(65, 47, 31);
+  outline-offset: 3px;
+}
+
+.contact {
+  background-color: rgb(255, 249, 235);
+  padding: 50px 20px;
+}
+
+.contact-heading {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.contact-heading h2 {
+  color: rgb(65, 47, 31);
+  font-size: 30px;
+  margin: 0 0 12px;
+}
+
+.contact-heading p {
+  color: rgb(110, 85, 60);
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 35px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  min-width: 0;
+  padding: 15px 0;
+}
+
+.contact-subtitle {
+  color: rgb(65, 47, 31);
+  font-size: 23px;
+  margin: 0 0 12px;
+}
+
+.contact-description {
+  color: rgb(90, 70, 52);
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 30px;
+}
+
+.contact-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-timeline::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 25px;
+  bottom: 25px;
+  width: 2px;
+  background-color: rgb(215, 190, 150);
+}
+
+.contact-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 5px 0;
+  color: rgb(65, 47, 31);
+  text-decoration: none;
+}
+
+.contact-icon {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(245, 230, 195);
+  border: 1px solid rgb(215, 190, 150);
+  border-radius: 50%;
+  color: rgb(120, 80, 40);
+  font-size: 20px;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+}
+
+.contact-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-text h4 {
+  color: rgb(65, 47, 31);
+  font-size: 16px;
+  margin: 0 0 6px;
+}
+
+.contact-text p {
+  color: rgb(100, 80, 60);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-arrow {
+  flex-shrink: 0;
+  color: rgb(130, 100, 65);
+  font-size: 13px;
+  transition:
+    transform 0.3s,
+    color 0.3s;
+}
+
+.contact-item:hover .contact-icon {
+  background-color: rgb(245, 207, 112);
+  transform: scale(1.08);
+}
+
+.contact-item:hover .contact-arrow {
+  color: rgb(120, 80, 40);
+  transform: translate(3px, -3px);
+}
+
+.contact-form-card {
+  width: 100%;
+  max-width: 420px;
+  min-width: 0;
+  justify-self: center;
+  box-sizing: border-box;
+  background-color: rgb(255, 253, 245);
+  border: 1px solid rgb(215, 190, 150);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgb(65, 47, 31, 0.07);
+  transition:
+    box-shadow 0.3s,
+    border-color 0.3s;
+}
+
+.contact-form-card:hover {
+  border-color: rgb(190, 155, 105);
+  box-shadow: 0 12px 30px rgb(65, 47, 31, 0.12);
+}
+
+.form-header {
+  padding: 18px 20px;
+  background-color: rgb(245, 230, 200);
+  border-bottom: 1px solid rgb(215, 190, 150);
+}
+
+.form-header h3 {
+  color: rgb(65, 47, 31);
+  font-size: 20px;
+  margin: 0 0 7px;
+}
+
+.form-header p {
+  color: rgb(100, 80, 60);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.form-group label {
+  color: rgb(65, 47, 31);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid rgb(215, 190, 150);
+  border-radius: 9px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(65, 47, 31);
+  font-family: inherit;
+  font-size: 14px;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgb(120, 105, 85);
+  opacity: 1;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgb(155, 105, 35);
+  box-shadow: 0 0 0 3px rgb(215, 190, 150, 0.35);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(245, 207, 112);
+  color: rgb(65, 47, 31);
+  border: 1px solid rgb(220, 175, 75);
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: rgb(230, 185, 85);
+  transform: translateY(-2px);
+}
+
+.form-error {
+  display: block;
+  color: rgb(190, 45, 45);
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+#message-count {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: rgb(120, 90, 50);
+  margin-top: 5px;
+}
+
+.contact-form [aria-invalid="true"] {
+  border-color: rgb(190, 45, 45);
+}
+
+#form-status {
+  color: rgb(34, 139, 34);
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.footer {
+  background-color: rgb(65, 47, 31);
+  color: rgb(255, 249, 235);
+  padding: 60px 8% 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footer-logo {
+  color: rgb(245, 190, 50);
+  font-size: 36px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.footer-about h3 {
+  margin-top: 10px;
+}
+
+.footer-about p {
+  color: rgb(235, 215, 185);
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 250px;
+}
+
+.footer-links,
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  color: rgb(245, 190, 50);
+}
+
+.footer-links a,
+.footer-social a {
+  color: rgb(255, 249, 235);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: rgb(245, 190, 50);
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-social i {
+  font-size: 18px;
+  width: 22px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgb(130, 104, 76);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgb(235, 215, 185);
+  font-size: 13px;
+}
+
+.footer-bottom a {
+  color: rgb(245, 190, 50);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-bottom a:hover {
+  color: rgb(255, 249, 235);
+}
+
+body.dark-mode .site-header {
+  background-color: rgb(43, 36, 30);
+  border-bottom: 1px solid rgb(83, 69, 56);
+  box-shadow: 0 4px 12px rgb(0, 0, 0, 0.18);
+}
+
+body.dark-mode .nav-logo {
+  color: rgb(255, 249, 235);
+  background-color: rgb(65, 47, 31);
+  border: 1px solid rgb(116, 91, 67);
+}
+
+body.dark-mode .logo-dot {
+  color: rgb(245, 207, 112);
+}
+
+body.dark-mode .nav-links a {
+  color: rgb(255, 249, 235);
+}
+
+body.dark-mode .nav-links a:hover {
+  color: rgb(245, 207, 112);
+}
+
+body.dark-mode #theme-toggle,
+body.dark-mode #menu-toggle {
+  background-color: rgb(65, 47, 31);
+  color: rgb(255, 249, 235);
+  border: 1px solid rgb(116, 91, 67);
+}
+
+body.dark-mode #theme-toggle:hover,
+body.dark-mode #menu-toggle:hover {
+  background-color: rgb(83, 69, 56);
+}
+
+body.dark-mode .hero {
+  background-color: rgb(43, 36, 30);
+  background-image: none;
+}
+
+body.dark-mode .hero-greeting {
+  color: rgb(245, 207, 112);
+}
+
+body.dark-mode .hero-title {
+  color: rgb(255, 249, 235);
+}
+
+body.dark-mode .hero-role {
+  color: rgb(238, 220, 183);
+}
+
+body.dark-mode .hero-description {
+  color: rgb(224, 211, 192);
+}
+
+body.dark-mode .btn-primary {
+  background-color: rgb(245, 207, 112);
+  color: rgb(65, 47, 31);
+  border: 1px solid rgb(245, 207, 112);
+}
+
+body.dark-mode .btn-primary:hover {
+  background-color: rgb(255, 224, 151);
+  border-color: rgb(255, 224, 151);
+}
+
+body.dark-mode .btn-secondary {
+  background-color: rgb(65, 47, 31);
+  color: rgb(255, 249, 235);
+  border: 1px solid rgb(116, 91, 67);
+}
+
+body.dark-mode .btn-secondary:hover {
+  background-color: rgb(83, 69, 56);
+  border-color: rgb(145, 116, 85);
+}
+
+body.dark-mode .hero-image {
+  background-color: rgb(65, 47, 31);
+  border: 1px solid rgb(116, 91, 67);
+}
+
+body.dark-mode .about {
+  background-color: rgb(43, 36, 30);
+}
+
+body.dark-mode .about h2 {
+  color: rgb(255, 249, 235);
+}
+
+body.dark-mode .about-intro {
+  color: rgb(224, 211, 192);
+}
+
+body.dark-mode .journey-timeline::before {
+  background-color: rgb(116, 91, 67);
+}
+
+body.dark-mode .journey-icon {
+  background-color: rgb(65, 47, 31);
+  border: 1px solid rgb(145, 116, 85);
+  color: rgb(245, 207, 112);
+}
+
+body.dark-mode .journey-item:hover .journey-icon {
+  background-color: rgb(83, 62, 43);
+  border-color: rgb(245, 207, 112);
+  color: rgb(255, 249, 235);
+}
+
+body.dark-mode .journey-content {
+  border-bottom: 1px solid rgb(91, 72, 55);
+}
+
+body.dark-mode .journey-content > span {
+  color: rgb(245, 207, 112);
+}
+
+body.dark-mode .journey-content h3 {
+  color: rgb(255, 249, 235);
+}
+
+body.dark-mode .journey-content p {
+  color: rgb(224, 211, 192);
+}
+body.dark-mode .skills {
+  background: rgb(35, 33, 32);
+  color: rgb(245, 238, 225);
+}
+
+body.dark-mode .skills h2,
+body.dark-mode .skills h3,
+body.dark-mode .skills h4 {
+  color: rgb(255, 248, 235);
+}
+
+body.dark-mode .skills p {
+  color: rgb(215, 205, 190);
+}
+
+body.dark-mode .skill-card,
+body.dark-mode .skill-category {
+  background: rgb(65, 55, 49);
+  border: 1px solid rgb(130, 105, 78);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 15%);
+}
+
+body.dark-mode .skill-item {
+  background: rgb(78, 70, 63);
+  border: 1px solid rgb(110, 95, 78);
+  color: rgb(245, 238, 225);
+}
+
+body.dark-mode .skill-item:hover {
+  background: rgb(92, 80, 68);
+  border-color: rgb(235, 190, 110);
+}
+
+body.dark-mode .skill-item span {
+  color: rgb(245, 238, 225);
+}
+
+/* Original Devicon Colors */
+body.dark-mode .skill-item .devicon-html5-plain.colored {
+  color: rgb(227, 79, 38);
+}
+
+body.dark-mode .skill-item .devicon-css3-plain.colored {
+  color: rgb(21, 114, 182);
+}
+
+body.dark-mode .skill-item .devicon-javascript-plain.colored {
+  color: rgb(247, 223, 30);
+}
+
+body.dark-mode .skill-item .devicon-react-original.colored {
+  color: rgb(97, 218, 251);
+}
+
+body.dark-mode .skill-item .devicon-python-plain.colored {
+  color: rgb(55, 118, 171);
+}
+
+body.dark-mode .skill-item .devicon-java-plain.colored {
+  color: rgb(237, 139, 0);
+}
+
+body.dark-mode .skill-item .devicon-php-plain.colored {
+  color: rgb(119, 123, 180);
+}
+
+body.dark-mode .skill-item .devicon-cplusplus-plain.colored {
+  color: rgb(0, 89, 156);
+}
+
+body.dark-mode .skill-item .devicon-vscode-plain.colored {
+  color: rgb(0, 122, 204);
+}
+
+body.dark-mode .skill-item .devicon-git-plain.colored {
+  color: rgb(240, 80, 50);
+}
+
+body.dark-mode .skill-item .devicon-github-original {
+  color: rgb(255, 255, 255);
+}
+
+body.dark-mode .skill-item .devicon-eclipse-plain {
+  color: rgb(45, 65, 130);
+}
+
+body.dark-mode .ability-card {
+  background: rgb(65, 55, 49);
+  border: 1px solid rgb(130, 105, 78);
+  box-shadow: none;
+}
+
+body.dark-mode .ability-card:hover {
+  background: rgb(78, 65, 55);
+  border-color: rgb(235, 190, 110);
+}
+
+body.dark-mode .ability-card i {
+  color: rgb(245, 195, 105);
+}
+
+body.dark-mode .ability-card h4 {
+  color: rgb(245, 238, 225);
+}
+
+body.dark-mode .currently-learning {
+  background: rgb(65, 55, 49);
+  border: 1px solid rgb(130, 105, 78);
+  color: rgb(245, 238, 225);
+}
+
+body.dark-mode .currently-learning h3 {
+  color: rgb(245, 195, 105);
+}
+
+body.dark-mode .currently-learning p {
+  color: rgb(220, 210, 195);
+}
+
+body.dark-mode .skill-item .learning {
+  color: rgb(245, 195, 105);
+  background: transparent;
+  border: none;
+}
+
+body.dark-mode .skill-item .devicon-github-original {
+  color: #f1efeb;
+}
+
+body.dark-mode .skill-item .devicon-eclipse-plain {
+  color: rgb(15, 98, 214);
+}
+
+body.dark-mode .projects {
+  background-color: rgb(43, 36, 30);
+}
+
+body.dark-mode .projects h2 {
+  color: rgb(255, 249, 235);
+}
+
+body.dark-mode .filter-btn {
+  background-color: rgb(60, 50, 40);
+  color: rgb(255, 249, 235);
+  border-color: rgb(116, 91, 67);
+}
+
+body.dark-mode .filter-btn:hover,
+body.dark-mode .filter-btn.active {
+  background-color: rgb(245, 190, 50);
+  color: rgb(65, 47, 31);
+  border-color: rgb(245, 190, 50);
+}
+
+body.dark-mode .filter-btn:focus-visible {
+  outline: 3px solid rgb(245, 207, 112);
+  outline-offset: 3px;
+}
+
+body.dark-mode #project-count {
+  color: rgb(224, 211, 192);
+}
+
+body.dark-mode .project-card {
+  background-color: rgb(45, 39, 33);
+  border-color: rgb(95, 75, 50);
+}
+
+body.dark-mode .project-card:hover {
+  border-color: rgb(245, 207, 112);
+  box-shadow: 0 10px 25px rgb(0 0 0 / 25%);
+}
+
+body.dark-mode .project-browser {
+  background-color: rgb(60, 50, 40);
+}
+
+body.dark-mode .browser-header {
+  background-color: rgb(65, 47, 31);
+}
+
+body.dark-mode .project-image {
+  background-color: rgb(60, 50, 40);
+}
+
+body.dark-mode .project-image span {
+  color: rgb(195, 175, 150);
+}
+
+body.dark-mode .project-category {
+  color: rgb(245, 207, 112);
+}
+
+body.dark-mode .project-card h3 {
+  color: rgb(255, 249, 235);
+}
+
+body.dark-mode .project-card p {
+  color: rgb(224, 211, 192);
+}
+
+body.dark-mode .project-technologies span {
+  background-color: rgb(60, 50, 40);
+  color: rgb(255, 235, 195);
+}
+
+body.dark-mode .project-github {
+  background-color: rgb(245, 190, 50);
+  color: rgb(65, 47, 31);
+}
+
+body.dark-mode .project-github:hover {
+  background-color: rgb(245, 207, 112);
+}
+
+body.dark-mode .project-demo {
+  background-color: transparent;
+  color: rgb(245, 207, 112);
+  border-color: rgb(245, 207, 112);
+}
+
+body.dark-mode .project-demo:hover {
+  background-color: rgb(245, 190, 50);
+  color: rgb(65, 47, 31);
+}
+
+body.dark-mode .project-links a:focus-visible {
+  outline: 3px solid rgb(245, 207, 112);
+  outline-offset: 3px;
+}
+
+body.dark-mode .contact {
+  background-color: rgb(25, 39, 34);
+}
+
+body.dark-mode .contact-heading h2,
+body.dark-mode .contact-subtitle,
+body.dark-mode .contact-text h4,
+body.dark-mode .form-header h3 {
+  color: rgb(248, 244, 232);
+}
+
+body.dark-mode .contact-heading p,
+body.dark-mode .contact-description,
+body.dark-mode .contact-text p,
+body.dark-mode .form-header p {
+  color: rgb(196, 207, 195);
+}
+
+body.dark-mode .contact-timeline::before {
+  background-color: rgb(76, 101, 84);
+}
+
+body.dark-mode .contact-icon {
+  background-color: rgb(43, 61, 51);
+  border: 1px solid rgb(76, 101, 84);
+  color: rgb(218, 228, 207);
+}
+
+body.dark-mode .contact-arrow {
+  color: rgb(176, 194, 174);
+}
+
+body.dark-mode .contact-item:hover .contact-icon {
+  background-color: rgb(67, 91, 73);
+  border-color: rgb(150, 174, 143);
+  color: rgb(255, 252, 240);
+}
+
+body.dark-mode .contact-item:hover .contact-arrow {
+  color: rgb(248, 244, 232);
+}
+
+body.dark-mode .contact-form-card {
+  background-color: rgb(32, 47, 40);
+  border: 1px solid rgb(67, 88, 73);
+  box-shadow: 0 8px 25px rgb(0, 0, 0, 0.16);
+}
+
+body.dark-mode .contact-form-card:hover {
+  border-color: rgb(111, 139, 108);
+  box-shadow: 0 12px 28px rgb(0, 0, 0, 0.24);
+}
+
+body.dark-mode .form-header {
+  background-color: rgb(38, 56, 46);
+  border-bottom: 1px solid rgb(67, 88, 73);
+}
+
+body.dark-mode .form-group label {
+  color: rgb(238, 239, 224);
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+  background-color: rgb(25, 39, 34);
+  border: 1px solid rgb(76, 101, 84);
+  color: rgb(248, 244, 232);
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+  color: rgb(166, 183, 166);
+  opacity: 1;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+  border-color: rgb(166, 193, 151);
+  box-shadow: 0 0 0 3px rgb(119, 151, 113, 0.22);
+  outline: none;
+}
+
+body.dark-mode .submit-btn {
+  background-color: rgb(196, 211, 169);
+  border: 1px solid rgb(196, 211, 169);
+  color: rgb(31, 48, 38);
+}
+
+body.dark-mode .submit-btn:hover {
+  background-color: rgb(220, 230, 199);
+  border-color: rgb(220, 230, 199);
+  transform: translateY(-2px);
+}
+body.dark-mode .contact {
+  background-color: rgb(43, 36, 30);
+}
+
+body.dark-mode .contact-heading h2,
+body.dark-mode .contact-subtitle,
+body.dark-mode .contact-text h4,
+body.dark-mode .form-header h3 {
+  color: rgb(255, 249, 235);
+}
+
+body.dark-mode .contact-heading p,
+body.dark-mode .contact-description,
+body.dark-mode .contact-text p,
+body.dark-mode .form-header p {
+  color: rgb(224, 211, 192);
+}
+
+body.dark-mode .contact-timeline::before {
+  background-color: rgb(116, 91, 67);
+}
+
+body.dark-mode .contact-icon {
+  background-color: rgb(65, 47, 31);
+  border: 1px solid rgb(100, 78, 58);
+  color: rgb(245, 207, 112);
+  transition:
+    background-color 0.3s,
+    border-color 0.3s,
+    color 0.3s,
+    transform 0.3s;
+}
+
+body.dark-mode .contact-arrow {
+  color: rgb(224, 211, 192);
+}
+
+body.dark-mode .contact-item:hover .contact-icon {
+  background-color: rgb(83, 69, 56);
+  border-color: rgb(245, 207, 112);
+  color: rgb(255, 249, 235);
+}
+
+body.dark-mode .contact-item:hover .contact-arrow {
+  color: rgb(245, 207, 112);
+}
+
+body.dark-mode .contact-form-card {
+  background-color: rgb(53, 43, 35);
+  border: 1px solid rgb(100, 78, 58);
+  box-shadow: 0 6px 18px rgb(0, 0, 0, 0.18);
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+body.dark-mode .contact-form-card:hover {
+  border-color: rgb(245, 207, 112);
+  box-shadow: 0 12px 28px rgb(0, 0, 0, 0.3);
+}
+
+body.dark-mode .form-header {
+  background-color: rgb(65, 53, 43);
+  border-bottom: 1px solid rgb(100, 78, 58);
+}
+
+body.dark-mode .form-group label {
+  color: rgb(255, 249, 235);
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+  background-color: rgb(39, 36, 33);
+  border: 1px solid rgb(100, 78, 58);
+  color: rgb(255, 249, 235);
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+  color: rgb(190, 176, 156);
+  opacity: 1;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+  border-color: rgb(245, 207, 112);
+  box-shadow: 0 0 0 3px rgb(245, 207, 112, 0.15);
+  outline: none;
+}
+
+body.dark-mode .submit-btn {
+  background-color: rgb(245, 207, 112);
+  border: 1px solid rgb(245, 207, 112);
+  color: rgb(65, 47, 31);
+}
+
+body.dark-mode .submit-btn:hover {
+  background-color: rgb(255, 224, 151);
+  border-color: rgb(255, 224, 151);
+  color: rgb(43, 36, 30);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 1200px) {
+  /* NAVBAR */
+  .site-header {
+    padding: 15px 60px;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .nav-links,
+  .nav-links.active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    position: static;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 65px;
+    padding: 70px 60px;
+    min-height: 75vh;
+  }
+
+  .hero-content {
+    max-width: 600px;
+    text-align: left;
+  }
+
+  .hero-title {
+    font-size: 60px;
+  }
+
+  .hero-role {
+    font-size: 30px;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+
+  .hero-image img {
+    width: 290px;
+    height: 350px;
+  }
+
+  .about {
+    padding: 65px 60px;
+  }
+
+  .about-container {
+    max-width: 1000px;
+  }
+
+  .skills {
+    padding: 65px 60px;
+  }
+
+  .skills-container {
+    max-width: 1300px;
+  }
+
+  .skills-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .skill-category {
+    min-width: 0;
+    padding: 18px;
+  }
+
+  .skill-category h3 {
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .skill-item {
+    min-height: 85px;
+    padding: 8px;
+  }
+
+  .abilities-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .projects {
+    padding: 65px 40px;
+  }
+
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .project-card {
+    min-width: 0;
+    padding: 12px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  .browser-header {
+    padding: 9px;
+  }
+
+  .project-image {
+    height: 145px;
+  }
+
+  .project-category {
+    font-size: 14px;
+  }
+
+  .project-card h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .project-card p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .project-technologies {
+    gap: 5px;
+  }
+
+  .project-technologies span {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .project-links {
+    gap: 7px;
+  }
+
+  .project-github,
+  .project-demo {
+    padding: 9px 5px;
+    font-size: 12px;
+  }
+
+  .contact {
+    padding: 65px 60px;
+  }
+
+  .contact-heading {
+    margin-bottom: 30px;
+  }
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 30px;
+    max-width: 1000px;
+  }
+
+  .contact-info {
+    padding: 10px 0;
+  }
+
+  .contact-description {
+    margin-bottom: 20px;
+  }
+
+  .contact-timeline {
+    gap: 15px;
+  }
+
+  .contact-form-card {
+    max-width: 420px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 55px 60px 20px;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .site-header {
+    padding: 12px 25px;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .nav-logo {
+    font-size: 25px;
+    padding: 5px 12px;
+    margin-right: 0;
+    flex-shrink: 0;
+  }
+
+  .nav-links,
+  .nav-links.active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    width: auto;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 6px 2px;
+    white-space: nowrap;
+  }
+
+  #theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 65vh;
+    padding: 55px 25px;
+    gap: 25px;
+  }
+
+  .hero-content {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .hero-greeting {
+    font-size: 17px;
+  }
+
+  .hero-title {
+    font-size: 44px;
+    line-height: 1.2;
+  }
+
+  .hero-role {
+    font-size: 23px;
+    margin-bottom: 15px;
+  }
+
+  .hero-description {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+
+  .hero-image {
+    flex-shrink: 0;
+    padding: 10px;
+  }
+
+  .hero-image img {
+    width: 220px;
+    height: 270px;
+  }
+
+  .about {
+    padding: 55px 30px;
+  }
+
+  .about-container {
+    max-width: 850px;
+  }
+
+  .about h2 {
+    font-size: 29px;
+  }
+
+  .about-intro {
+    font-size: 16px;
+  }
+
+  .journey-timeline {
+    gap: 8px;
+  }
+
+  .journey-item {
+    gap: 15px;
+  }
+
+  .journey-content h3 {
+    font-size: 19px;
+  }
+
+  .journey-content p {
+    font-size: 16px;
+  }
+
+  .skills {
+    padding: 55px 25px;
+  }
+
+  .skills-container {
+    max-width: 950px;
+  }
+
+  .skills h2 {
+    font-size: 29px;
+  }
+
+  .skills-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .skill-category {
+    min-width: 0;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .skill-category h3 {
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .skill-item {
+    min-height: 85px;
+    padding: 8px 5px;
+  }
+
+  .skill-item i {
+    font-size: 26px;
+  }
+
+  .skill-item span {
+    font-size: 15px;
+  }
+
+  .skills-extra {
+    margin-top: 25px;
+  }
+
+  .abilities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .ability-card {
+    padding: 15px;
+  }
+
+  .currently-learning {
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  .projects {
+    padding: 55px 25px;
+  }
+
+  .projects h2 {
+    font-size: 29px;
+    margin-bottom: 20px;
+  }
+
+  .project-filters {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  #project-count {
+    margin: 12px 0 20px;
+  }
+
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .project-card {
+    min-width: 0;
+    padding: 12px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  .browser-header {
+    padding: 9px;
+  }
+
+  .project-image {
+    height: 140px;
+  }
+
+  .project-category {
+    font-size: 15px;
+  }
+
+  .project-card h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .project-card p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .project-technologies {
+    gap: 6px;
+  }
+
+  .project-technologies span {
+    padding: 5px 9px;
+    font-size: 11px;
+  }
+
+  .project-links {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header {
+    padding: 12px 20px;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .nav-logo {
+    font-size: 25px;
+    padding: 4px 12px;
+    margin-right: auto;
+  }
+  #theme-toggle,
+  #menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    font-size: 21px;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 205px;
+    padding: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+    background-color: rgb(65, 47, 31);
+    border: 1px solid rgb(176, 120, 0);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgb(65, 47, 31, 0.15);
+    z-index: 200;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav-links a,
+  body.dark-mode .nav-links a {
+    display: block;
+    padding: 10px 12px;
+    color: rgb(255, 249, 235);
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: auto;
+    flex-direction: column;
+    padding: 55px 20px;
+    gap: 30px;
+  }
+
+  .hero-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-greeting {
+    font-size: 16px;
+  }
+
+  .hero-title {
+    font-size: 35px;
+    line-height: 1.2;
+  }
+
+  .hero-role {
+    font-size: 20px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 auto 25px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 11px 16px;
+    font-size: 13px;
+  }
+
+  .hero-image {
+    padding: 10px;
+  }
+
+  .hero-image img {
+    width: 220px;
+    height: 270px;
+  }
+
+  .about,
+  .skills,
+  .contact {
+    padding: 50px 20px;
+  }
+
+  .about h2,
+  .skills h2,
+  .projects h2,
+  .contact-heading h2 {
+    font-size: 27px;
+  }
+
+  .about-intro,
+  .skills-intro {
+    font-size: 14px;
+  }
+
+  .journey-item {
+    gap: 12px;
+  }
+
+  .journey-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 19px;
+  }
+
+  .journey-timeline::before {
+    left: 22px;
+  }
+
+  .journey-content h3 {
+    font-size: 18px;
+  }
+
+  .journey-content p {
+    font-size: 14px;
+  }
+
+  .skills-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .skill-category {
+    padding: 15px;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .skill-item {
+    min-height: 90px;
+  }
+
+  .abilities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .ability-card {
+    padding: 15px 10px;
+  }
+
+  .currently-learning {
+    padding: 15px;
+  }
+
+  .projects {
+    padding: 50px 20px;
+  }
+
+  .project-filters {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 15px;
+  }
+
+  .project-image {
+    height: 170px;
+  }
+
+  .project-card h3 {
+    font-size: 20px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+
+  .contact-heading {
+    margin-bottom: 30px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-info {
+    padding: 0;
+  }
+
+  .contact-subtitle {
+    font-size: 21px;
+  }
+
+  .contact-description {
+    font-size: 14px;
+  }
+
+  .contact-form-card {
+    max-width: 100%;
+  }
+
+  .contact-form {
+    padding: 16px;
+  }
+
+  .footer {
+    padding: 45px 20px 20px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header {
+    padding: 10px 15px;
+  }
+
+  .navbar {
+    gap: 10px;
+  }
+
+  .hero {
+    padding: 45px 15px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-role {
+    font-size: 19px;
+  }
+
+  .hero-image img {
+    width: 200px;
+    height: 250px;
+  }
+
+  .about,
+  .skills,
+  .contact,
+  .projects {
+    padding: 45px 15px;
+  }
+
+  .skill-category {
+    padding: 12px;
+  }
+
+  .project-card {
+    padding: 12px;
+  }
+
+  .project-links {
+    gap: 8px;
+  }
+
+  .project-github,
+  .project-demo {
+    font-size: 12px;
+    padding: 10px 6px;
+  }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .contact-timeline::before {
+    left: 21px;
+  }
+  .contact-text h4 {
+    font-size: 14px;
+  }
+
+  .contact-text p {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .footer {
+    padding: 40px 15px 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding-top: 80px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    padding-top: 75px;
+  }
+
+  html {
+    scroll-padding-top: 75px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 65px;
+  }
+
+  html {
+    scroll-padding-top: 65px;
+  }
+}
