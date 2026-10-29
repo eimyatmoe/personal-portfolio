@@ -1594,6 +1594,7 @@ textarea:focus-visible {
 }
 
 @media (min-width: 1200px) {
+  /* NAVBAR */
   .site-header {
     padding: 15px 60px;
   }
@@ -1794,7 +1795,7 @@ textarea:focus-visible {
   .contact-form-card {
     max-width: 420px;
   }
-
+  /* FOOTER */
   .footer {
     padding: 55px 60px 20px;
   }
