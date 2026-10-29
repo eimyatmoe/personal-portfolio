@@ -1585,6 +1585,14 @@ body.dark-mode .submit-btn:hover {
   transform: translateY(-2px);
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgb(176, 120, 0);
+  outline-offset: 3px;
+}
+
 @media (min-width: 1200px) {
   /* NAVBAR */
   .site-header {
@@ -1787,7 +1795,6 @@ body.dark-mode .submit-btn:hover {
   .contact-form-card {
     max-width: 420px;
   }
-
   /* FOOTER */
   .footer {
     padding: 55px 60px 20px;
